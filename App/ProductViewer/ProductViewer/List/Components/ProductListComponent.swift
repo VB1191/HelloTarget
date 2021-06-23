@@ -27,6 +27,6 @@ struct ProductListComponent: Component {
 
 extension ProductListComponent: HarmonyLayoutComponent {
     func heightForLayout(_ layout: HarmonyLayout, item: TempoViewStateItem, width: CGFloat) -> CGFloat {
-        return 100.0
+        return 150.0
     }
 }

@@ -18,6 +18,9 @@
 		5BEF081F1D663598006BF0C0 /* ProductListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEF081E1D663598006BF0C0 /* ProductListView.swift */; };
 		5BEF08211D6635B2006BF0C0 /* ProductListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BEF08201D6635B2006BF0C0 /* ProductListView.xib */; };
 		C5C0528B23886699002A586D /* Tempo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5C0528723886616002A586D /* Tempo.framework */; };
+		F82B7F7126837973009B5ABA /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B7F7026837973009B5ABA /* UINavigationControllerExtension.swift */; };
+		F82B7F75268379C2009B5ABA /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B7F74268379C2009B5ABA /* UIColorExtension.swift */; };
+		F82B7F78268381F3009B5ABA /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F82B7F77268381F3009B5ABA /* ColorAssets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		5BEF081E1D663598006BF0C0 /* ProductListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductListView.swift; sourceTree = "<group>"; };
 		5BEF08201D6635B2006BF0C0 /* ProductListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductListView.xib; sourceTree = "<group>"; };
 		C5C0528723886616002A586D /* Tempo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Tempo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F82B7F7026837973009B5ABA /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
+		F82B7F74268379C2009B5ABA /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		F82B7F77268381F3009B5ABA /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,10 +74,12 @@
 		5B259CC81D6630E0001D755F /* ProductViewer */ = {
 			isa = PBXGroup;
 			children = (
+				F82B7F6F2683794F009B5ABA /* Extensions */,
 				5BEF08101D66328D006BF0C0 /* Detail */,
 				5BEF080F1D663283006BF0C0 /* List */,
 				5B259CC91D6630E0001D755F /* AppDelegate.swift */,
 				5B259CD01D6630E0001D755F /* Assets.xcassets */,
+				F82B7F77268381F3009B5ABA /* ColorAssets.xcassets */,
 				5B259CD21D6630E0001D755F /* LaunchScreen.storyboard */,
 				5B259CD51D6630E0001D755F /* Info.plist */,
 			);
@@ -113,6 +121,15 @@
 				5B302A8E1D663A8500FA2FFD /* ProductListComponent.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		F82B7F6F2683794F009B5ABA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F82B7F7026837973009B5ABA /* UINavigationControllerExtension.swift */,
+				F82B7F74268379C2009B5ABA /* UIColorExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +193,7 @@
 			files = (
 				5B259CD41D6630E0001D755F /* LaunchScreen.storyboard in Resources */,
 				5B259CD11D6630E0001D755F /* Assets.xcassets in Resources */,
+				F82B7F78268381F3009B5ABA /* ColorAssets.xcassets in Resources */,
 				5BEF08211D6635B2006BF0C0 /* ProductListView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -192,8 +210,10 @@
 				5BEF081F1D663598006BF0C0 /* ProductListView.swift in Sources */,
 				5B302A8F1D663A8500FA2FFD /* ProductListComponent.swift in Sources */,
 				5BEF08141D663304006BF0C0 /* ListViewController.swift in Sources */,
+				F82B7F75268379C2009B5ABA /* UIColorExtension.swift in Sources */,
 				5BEF08121D6632EC006BF0C0 /* ListCoordinator.swift in Sources */,
 				5B2675A21D674B400015A238 /* ListEvents.swift in Sources */,
+				F82B7F7126837973009B5ABA /* UINavigationControllerExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +278,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -308,7 +328,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;

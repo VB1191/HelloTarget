@@ -9,6 +9,10 @@ import UIKit
 import Tempo
 
 class ListViewController: UIViewController {
+
+	override open var preferredStatusBarStyle: UIStatusBarStyle {
+		return .lightContent
+	}
     
     class func viewControllerFor(coordinator: TempoCoordinator) -> ListViewController {
         let viewController = ListViewController()
@@ -38,8 +42,9 @@ class ListViewController: UIViewController {
 
         view.addAndPinSubview(collectionView)
         collectionView.contentInset = UIEdgeInsets(top: 20.0, left: 0.0, bottom: 0.0, right: 0.0)
-        
-        title = "checkout"
+
+		self.navigationController?.setTargetNavigationBar()
+		self.title = "Deals"
         
         let components: [ComponentType] = [
             ProductListComponent()
