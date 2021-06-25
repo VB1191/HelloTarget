@@ -26,6 +26,7 @@ class ListCoordinator: TempoCoordinator {
             updateUI()
         }
     }
+
     
     fileprivate func updateUI() {
         for presenter in presenters {
@@ -58,8 +59,68 @@ class ListCoordinator: TempoCoordinator {
     }
     
     func updateState() {
-        viewState.listItems = (1..<10).map { index in
-            ListItemViewState(title: "Puppies!!!", price: "$9.99", image: UIImage(named: "\(index)"))
-        }
+
+		fetchProductsList() { (model, error) in
+			if let errorFound = error {
+				print("Error")
+			} else {
+
+				let productsObject: Products? = model
+
+				guard let productsArray: [Product] =  productsObject?.products else {
+					return
+				}
+
+				var viewStateItems = [ListItemViewState]()
+				for product in productsArray {
+					let viewStateItem = ListItemViewState(
+						title: NSLocalizedString(product.title, comment: ""),
+						salePrice: product.salePrice?.displayString ?? "",
+						originalPrice: product.regularPrice.displayString,
+						image: UIImage(named: "\(1)"),
+						aisle: "Asile\n\(product.aisle)"
+					)
+					viewStateItems.append(viewStateItem)
+				}
+
+				self.viewState.listItems = viewStateItems
+			}
+		}
+
+
+		/* 2. Load from mock
+		let productsObject: Products? = MockProductsList().mockProducts
+
+		guard let productsArray: [Product] =  productsObject?.products else {
+			return
+		}
+
+		var viewStateItems = [ListItemViewState]()
+		for product in productsArray {
+			let viewStateItem = ListItemViewState(title: NSLocalizedString(product.title, comment: ""), price: product.regularPrice.displayString, image: UIImage(named: "\(1)"))
+			viewStateItems.append(viewStateItem)
+		}
+
+		viewState.listItems = viewStateItems
+		*/
+
+		// 1. initial
+//        viewState.listItems = (1..<10).map { index in
+//            ListItemViewState(title: "Puppies!!!", price: "$9.99", image: UIImage(named: "\(index)"))
+//        }
     }
+
+
+	func fetchProductsList(param: [String: Any] = [:], completion: @escaping (Products?, NetworkError?) -> ()) {
+		let productListServiceHelper = ProductListServiceHelper()
+
+		let webServiceManager = WebServiceManager(serviceHelper: productListServiceHelper)
+		webServiceManager.loadAPIRequest(requestData: param) { (model, error) in
+			if let _ = error {
+				completion(nil, error)
+			} else {
+				completion(model, nil)
+			}
+		}
+	}
 }

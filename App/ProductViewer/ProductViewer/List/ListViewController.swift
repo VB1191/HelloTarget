@@ -26,13 +26,14 @@ class ListViewController: UIViewController {
     lazy var collectionView: UICollectionView = {
         let harmonyLayout = HarmonyLayout()
         
-        harmonyLayout.collectionViewMargins = HarmonyLayoutMargins(top: .narrow, right: .none, bottom: .narrow, left: .none)
-        harmonyLayout.defaultSectionMargins = HarmonyLayoutMargins(top: .narrow, right: .none, bottom: .none, left: .none)
+        harmonyLayout.collectionViewMargins = HarmonyLayoutMargins(top: .half, right: .half, bottom: .half, left: .half)
+        harmonyLayout.defaultSectionMargins = HarmonyLayoutMargins(top: .half, right: .none, bottom: .half, left: .none)
         
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: harmonyLayout)
         collectionView.backgroundColor = .targetFadeAwayGrayColor
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.alwaysBounceVertical = true
+		collectionView.accessibilityIdentifier = "productsListCollectionView"
         
         return collectionView
     }()

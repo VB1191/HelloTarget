@@ -16,8 +16,10 @@ struct ProductListComponent: Component {
     
     func configureView(_ view: ProductListView, item: ListItemViewState) {
         view.titleLabel.text = item.title
-        view.priceLabel.text = item.price
+        view.salePriceLabel.text = item.salePrice
+		view.originalPriceLabel.text = item.getOriginalPriceLabelText()
         view.productImage.image = item.image
+		view.setPriceLabelFont(font: item.getFontForPriceLabel())
     }
     
     func selectView(_ view: ProductListView, item: ListItemViewState) {
