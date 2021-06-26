@@ -5,10 +5,13 @@
 //  Copyright © 2016 Target. All rights reserved.
 //
 
+import IntentsUI
 import UIKit
 import Tempo
 
 class ListViewController: UIViewController {
+
+	static let dealsListActivity = "com.target.productviewer.showdeals"
 
 	override open var preferredStatusBarStyle: UIStatusBarStyle {
 		return .lightContent
@@ -57,12 +60,26 @@ class ListViewController: UIViewController {
         coordinator.presenters = [
             SectionPresenter(adapter: collectionViewAdapter),
         ]
-
+		donateShortcut()
     }
+
+	/**
+	Donation for shortcut: Donation for shortcut is made everytime users load the deals page
+	( Even if users dont create a Shorcut from the app, this donation will let iOS know that it can suggest users to create a shortcut for this action.
+	To test:  Load deals page multiple times. If you go to spotlight search and type deals you will see a suggestion for shortcut as one of the result.
+	iOS is completely responsible for time/location/any other factors for suggesting the shortcut to users. )
+	*/
+	func donateShortcut() {
+		if #available(iOS 12.0, *) {
+			let dealsActivity = NSUserActivity.showDealsActivity
+			self.userActivity = dealsActivity
+			dealsActivity.becomeCurrent()
+		}
+	}
     
     override func viewDidAppear(_ animated: Bool) {
-        
     }
     
 }
+
 

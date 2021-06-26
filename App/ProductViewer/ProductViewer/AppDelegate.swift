@@ -47,6 +47,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+	func application(_ application: UIApplication, willContinueUserActivityWithType userActivityType: String) -> Bool {
+		if userActivityType == ListViewController.dealsListActivity {
+			// go to deals list
+			print("V: Go to dealssss")
+		}
+		return true
+	}
 
 }
 

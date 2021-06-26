@@ -23,10 +23,11 @@ struct ListItemViewState: TempoViewStateItem, Equatable {
 	var originalPrice: String
     let image: UIImage?
 	let aisle: String
+	let imageURL: String?
 
 	func getFontForPriceLabel() -> UIFont {
 		if let price = salePrice, !price.isEmpty {
-			return UIFont.systemFont(ofSize: 18)
+			return UIFont.systemFont(ofSize: 16)
 		} else {
 			return UIFont.systemFont(ofSize: 26)
 		}

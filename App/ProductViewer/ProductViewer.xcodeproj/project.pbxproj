@@ -17,6 +17,7 @@
 		C5C0528B23886699002A586D /* Tempo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5C0528723886616002A586D /* Tempo.framework */; };
 		F822446F2685E11D00753398 /* ProductViewerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822446E2685E11D00753398 /* ProductViewerUITests.swift */; };
 		F82244782685E12900753398 /* ProductsUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82244642685E03700753398 /* ProductsUITest.swift */; };
+		F822448026862F6500753398 /* ImageLoaderHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822447F26862F6500753398 /* ImageLoaderHelper.swift */; };
 		F82B7F7126837973009B5ABA /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B7F7026837973009B5ABA /* UINavigationControllerExtension.swift */; };
 		F82B7F75268379C2009B5ABA /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B7F74268379C2009B5ABA /* UIColorExtension.swift */; };
 		F82B7F7F2683B5A3009B5ABA /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B7F7E2683B5A3009B5ABA /* Price.swift */; };
@@ -27,6 +28,7 @@
 		F82B7FF026848FCA009B5ABA /* RequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B7FEF26848FCA009B5ABA /* RequestHandler.swift */; };
 		F82B7FF326849071009B5ABA /* ResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B7FF226849071009B5ABA /* ResponseHandler.swift */; };
 		F82B7FF626849173009B5ABA /* WebServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B7FF526849173009B5ABA /* WebServiceManager.swift */; };
+		F832C8682687558D008E750E /* NSUserActivityExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F832C8672687558D008E750E /* NSUserActivityExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,12 +53,12 @@
 		5BEF08131D663304006BF0C0 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		5BEF08151D66333C006BF0C0 /* ListViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewState.swift; sourceTree = "<group>"; };
 		5BEF081E1D663598006BF0C0 /* ProductListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductListView.swift; sourceTree = "<group>"; };
-		5BEF08201D6635B2006BF0C0 /* ProductListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductListView.xib; sourceTree = "<group>"; };
 		C5C0528723886616002A586D /* Tempo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Tempo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F82244642685E03700753398 /* ProductsUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsUITest.swift; sourceTree = "<group>"; };
 		F822446C2685E11D00753398 /* ProductViewerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProductViewerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F822446E2685E11D00753398 /* ProductViewerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewerUITests.swift; sourceTree = "<group>"; };
 		F82244702685E11D00753398 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F822447F26862F6500753398 /* ImageLoaderHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderHelper.swift; sourceTree = "<group>"; };
 		F82B7F7026837973009B5ABA /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
 		F82B7F74268379C2009B5ABA /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		F82B7F77268381F3009B5ABA /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 		F82B7FEF26848FCA009B5ABA /* RequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHandler.swift; sourceTree = "<group>"; };
 		F82B7FF226849071009B5ABA /* ResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseHandler.swift; sourceTree = "<group>"; };
 		F82B7FF526849173009B5ABA /* WebServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceManager.swift; sourceTree = "<group>"; };
+		F832C8672687558D008E750E /* NSUserActivityExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSUserActivityExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,7 +161,6 @@
 			isa = PBXGroup;
 			children = (
 				5BEF081E1D663598006BF0C0 /* ProductListView.swift */,
-				5BEF08201D6635B2006BF0C0 /* ProductListView.xib */,
 				5B302A8E1D663A8500FA2FFD /* ProductListComponent.swift */,
 			);
 			path = Components;
@@ -178,6 +180,7 @@
 			children = (
 				F82B7F7026837973009B5ABA /* UINavigationControllerExtension.swift */,
 				F82B7F74268379C2009B5ABA /* UIColorExtension.swift */,
+				F832C8672687558D008E750E /* NSUserActivityExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				F82B7F8E2683BFA3009B5ABA /* ProductListServiceHelper.swift */,
+				F822447F26862F6500753398 /* ImageLoaderHelper.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -327,6 +331,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F832C8682687558D008E750E /* NSUserActivityExtension.swift in Sources */,
+				F822448026862F6500753398 /* ImageLoaderHelper.swift in Sources */,
 				5BEF08161D66333C006BF0C0 /* ListViewState.swift in Sources */,
 				5B259CCA1D6630E0001D755F /* AppDelegate.swift in Sources */,
 				5BEF081F1D663598006BF0C0 /* ProductListView.swift in Sources */,

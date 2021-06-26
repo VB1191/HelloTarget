@@ -63,8 +63,8 @@ final class ProductListView: UIView, ReusableView {
 	internal lazy var pricesStackView: UIStackView = {
 		let stack: UIStackView = UIStackView()
 		stack.distribution = .fill
-		stack.axis = .horizontal
-		stack.spacing = 8
+		stack.axis = .vertical
+		stack.spacing = 6
 		stack.setContentHuggingPriority(.defaultHigh, for: .vertical)
 		stack.translatesAutoresizingMaskIntoConstraints = false
 		return stack

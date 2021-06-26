@@ -78,7 +78,8 @@ class ListCoordinator: TempoCoordinator {
 						salePrice: product.salePrice?.displayString ?? "",
 						originalPrice: product.regularPrice.displayString,
 						image: UIImage(named: "\(1)"),
-						aisle: "Asile\n\(product.aisle)"
+						aisle: "Asile\n\(product.aisle)",
+						imageURL: product.imageUrl
 					)
 					viewStateItems.append(viewStateItem)
 				}

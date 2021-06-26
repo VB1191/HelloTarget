@@ -19,6 +19,15 @@ struct ProductListComponent: Component {
         view.salePriceLabel.text = item.salePrice
 		view.originalPriceLabel.text = item.getOriginalPriceLabelText()
         view.productImage.image = item.image
+		if let imageURLFound = item.imageURL {
+			ImageLoaderHelper.loadImageUsingCache(withUrl: imageURLFound) { loadedImage in
+				if let imageFound = loadedImage {
+					DispatchQueue.main.async {
+						view.productImage.image = imageFound
+					}
+				}
+			}
+		}
 		view.setPriceLabelFont(font: item.getFontForPriceLabel())
     }
     
