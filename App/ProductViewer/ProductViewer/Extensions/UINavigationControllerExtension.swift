@@ -11,7 +11,7 @@ import UIKit
 extension UINavigationController {
 
 	public func setTargetNavigationBar() {
-		setNavigationBarBackgroundColor(color: UIColor.targetRed, tittleTextAttributesColor: UIColor.white, barStyle: .black)
+		setNavigationBarBackgroundColor(color: .targetBullseyeRedColor, tittleTextAttributesColor: UIColor.white, barStyle: .black)
 	}
 
 	public func setNavigationBarBackgroundColor(color: UIColor?,

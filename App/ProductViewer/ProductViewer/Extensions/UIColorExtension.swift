@@ -9,5 +9,5 @@
 import UIKit
 
 extension UIColor {
-	static let targetRed = UIColor(named: "targetColor")!
+	static let targetRed = UIColor.red
 }
