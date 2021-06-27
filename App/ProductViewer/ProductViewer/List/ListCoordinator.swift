@@ -82,7 +82,7 @@ class ListCoordinator: TempoCoordinator {
 						salePrice: product.salePrice?.displayString ?? "",
 						originalPrice: product.regularPrice.displayString,
 						image: UIImage(named: "targetGray"),
-						aisle: "Asile\n\(product.aisle)",
+						aisle: product.aisle,
 						imageURL: product.imageUrl,
 						description: product.description
 					)

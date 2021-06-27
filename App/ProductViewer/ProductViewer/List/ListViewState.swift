@@ -36,12 +36,33 @@ struct ListItemViewState: TempoViewStateItem, Equatable {
 	}
 
 	/// Gets font String for originialPrice based on salePrice availability
-	func getOriginalPriceLabelText() -> String {
+	func getSalePriceLabelText() -> String {
 		if let price = salePrice, !price.isEmpty {
-			return "Was \(originalPrice)"
+			return price
 		} else {
 			return originalPrice
 		}
+	}
+
+	/// Gets font color
+	func getSalePriceLabelTextColor() -> UIColor {
+		if let price = salePrice, !price.isEmpty {
+			return .targetBullseyeRedColor
+		} else {
+			return .targetNeutralGrayColor
+		}
+	}
+
+	/// gets the attributed string for ship label
+	func getShipLabel() -> NSMutableAttributedString {
+		/// assuming ship will be avialble based on some other condition
+		let isShipAvaialble: Bool = true
+
+		let attributedString = NSMutableAttributedString()
+		attributedString.append(NSAttributedString(string:"ship", attributes:[NSAttributedString.Key.foregroundColor : UIColor.black]))
+		attributedString.append(NSAttributedString(string:" or", attributes: [NSAttributedString.Key.foregroundColor:HarmonyColor.targetNeutralGrayColor]))
+
+		return isShipAvaialble ? attributedString : NSMutableAttributedString(string: "")
 	}
 }
 

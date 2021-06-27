@@ -21,10 +21,11 @@ struct ProductListComponent: Component {
     func configureView(_ view: ProductListView, item: ListItemViewState) {
 
 		view.titleLabel.text = item.title
-		view.salePriceLabel.text = item.salePrice
-		view.originalPriceLabel.text = item.getOriginalPriceLabelText()
+		view.salePriceLabel.text = item.getSalePriceLabelText()
+		view.salePriceLabel.textColor = item.getSalePriceLabelTextColor()
 		view.productImage.image = item.image
-		view.setPriceLabelFont(font: item.getFontForPriceLabel())
+		view.shipLabel.attributedText = item.getShipLabel()
+		view.asileLabel.text = item.aisle
 
 		if let imageURLFound = item.imageURL {
 			ImageLoaderHelper.loadImageUsingCache(withUrl: imageURLFound) { loadedImage in

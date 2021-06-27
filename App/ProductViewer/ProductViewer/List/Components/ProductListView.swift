@@ -41,17 +41,11 @@ final class ProductListView: UIView, ReusableView {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
 		label.font = UIFont.systemFont(ofSize: 26.0, weight: .medium)
+		label.adjustsFontSizeToFitWidth = true
+		label.minimumScaleFactor = 0.6
 		label.textColor = .targetBullseyeRedColor
+		label.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
 		label.accessibilityIdentifier = "productSalePrice"
-		return label
-	}()
-
-	// original price for product
-	internal lazy var originalPriceLabel: UILabel = {
-		let label = UILabel()
-		label.translatesAutoresizingMaskIntoConstraints = false
-		label.textColor = .gray
-		label.accessibilityIdentifier = "originalSalePrice"
 		return label
 	}()
 
@@ -59,11 +53,33 @@ final class ProductListView: UIView, ReusableView {
 	internal lazy var pricesStackView: UIStackView = {
 		let stack: UIStackView = UIStackView()
 		stack.distribution = .fill
-		stack.axis = .vertical
+		stack.axis = .horizontal
 		stack.spacing = 6
-		stack.setContentHuggingPriority(.defaultLow, for: .vertical)
 		stack.translatesAutoresizingMaskIntoConstraints = false
 		return stack
+	}()
+
+	// ship or label
+	internal lazy var shipLabel: UILabel = {
+		let label = UILabel()
+		label.translatesAutoresizingMaskIntoConstraints = false
+		label.textColor = .gray
+		label.adjustsFontSizeToFitWidth = true
+		label.minimumScaleFactor = 0.6
+		label.accessibilityIdentifier = "shipLabel"
+		return label
+	}()
+
+	// asile label
+	internal lazy var asileLabel: UILabel = {
+		let label = UILabel()
+		label.translatesAutoresizingMaskIntoConstraints = false
+		label.textColor = .targetBullseyeRedColor
+		label.textAlignment = .center
+		label.adjustsFontSizeToFitWidth = true
+		label.minimumScaleFactor = 0.6
+		label.accessibilityIdentifier = "asileLabel"
+		return label
 	}()
 
 	/// product image
@@ -100,13 +116,10 @@ final class ProductListView: UIView, ReusableView {
 		addSubview(line)
 
 		pricesStackView.addArrangedSubview(salePriceLabel)
-		pricesStackView.addArrangedSubview(originalPriceLabel)
-		addSubview(pricesStackView)
-	}
+		pricesStackView.addArrangedSubview(shipLabel)
+		pricesStackView.addArrangedSubview(asileLabel)
 
-	/// sets font based on viewState
-	func setPriceLabelFont(font: UIFont) {
-		originalPriceLabel.font = font
+		addSubview(pricesStackView)
 	}
 
 	/// sets up constraints
@@ -134,5 +147,11 @@ final class ProductListView: UIView, ReusableView {
 		pricesStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16).isActive = true
 		pricesStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16).isActive = true
 
+		asileLabel.widthAnchor.constraint(equalToConstant: 40).isActive = true
+		asileLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
+
+		asileLabel.layer.cornerRadius = 20
+		asileLabel.layer.borderWidth = 1.0
+		asileLabel.layer.borderColor = HarmonyColor.targetNeutralGrayColor.cgColor
 	}
 }
