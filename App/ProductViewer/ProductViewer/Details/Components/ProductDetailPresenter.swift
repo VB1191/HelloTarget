@@ -76,4 +76,12 @@ class ProductDetailPresenter: TempoPresenter {
 		}
 		dispatcher?.triggerEvent(DealAddToListPressed(productToAdd: viewState))
 	}
+
+	/// dispatches share event
+	func shareButtonClicked() {
+		guard let viewState = currentViewState else {
+			return
+		}
+		dispatcher?.triggerEvent(DealShare(productToShare: viewState))
+	}
 }

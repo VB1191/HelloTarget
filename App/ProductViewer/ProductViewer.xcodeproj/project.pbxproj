@@ -24,6 +24,7 @@
 		F8261CC226878B15006C968B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8261CC126878B15006C968B /* DetailViewController.swift */; };
 		F8261CC426878B27006C968B /* DetailViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8261CC326878B27006C968B /* DetailViewState.swift */; };
 		F8261CC626878B3A006C968B /* DetailListEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8261CC526878B3A006C968B /* DetailListEvents.swift */; };
+		F8261CCB2688F01E006C968B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B259CD01D6630E0001D755F /* Assets.xcassets */; };
 		F82B7F7126837973009B5ABA /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B7F7026837973009B5ABA /* UINavigationControllerExtension.swift */; };
 		F82B7F7F2683B5A3009B5ABA /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B7F7E2683B5A3009B5ABA /* Price.swift */; };
 		F82B7F822683B704009B5ABA /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B7F812683B704009B5ABA /* Product.swift */; };
@@ -336,6 +337,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8261CCB2688F01E006C968B /* Assets.xcassets in Resources */,
 				F8D6D3F8268764E7002CFBCA /* TargetLaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -57,12 +57,59 @@ class DetailCoordinator: TempoCoordinator {
 			alert.addAction( UIAlertAction(title: "OK", style: .cancel, handler: nil) )
 			self?.viewController.present(alert, animated: true, completion: nil)
 		}
+
+		dispatcher.addObserver(DealShare.self) { [weak self] viewState in
+			self?.handleShare(viewState.productToShare)
+		}
 	}
 
 	fileprivate func updateUI() {
 		for presenter in presenters {
 			presenter.present(viewState)
 		}
+	}
+
+	/// Shares the given product's title, price, target website url and target logo
+	func handleShare(_ viewStateToShare: DetailViewState) {
+		// Setting description
+		var firstActivityItem = "Check out this amazing Target deal!!"
+
+		// Setting url
+		var price: String
+		if let salePrice = viewStateToShare.salePrice, !salePrice.isEmpty {
+			price = salePrice
+		} else {
+			price = viewStateToShare.originialPrics
+		}
+		firstActivityItem += "\(viewStateToShare.title) is priced at ONLY \(price)"
+
+		/// Ideally we could use a smart link here, but for now share will just show generic target website
+		let secondActivityItem = URL(string:"http://target.com/")!
+
+		let thirdActivityItem = UIImage(named: "target")!
+
+		let activityViewController : UIActivityViewController = UIActivityViewController(
+			activityItems: [firstActivityItem, secondActivityItem, thirdActivityItem], applicationActivities: nil)
+
+		// for iPad
+		activityViewController.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection.down
+		activityViewController.popoverPresentationController?.sourceRect = CGRect(x: 150, y: 150, width: 0, height: 0)
+
+		if #available(iOS 13.0, *) {
+			activityViewController.isModalInPresentation = true
+		}
+
+		activityViewController.excludedActivityTypes = [
+			UIActivity.ActivityType.postToWeibo,
+			UIActivity.ActivityType.print,
+			UIActivity.ActivityType.assignToContact,
+			UIActivity.ActivityType.saveToCameraRoll,
+			UIActivity.ActivityType.postToFlickr,
+			UIActivity.ActivityType.postToVimeo,
+			UIActivity.ActivityType.postToTencentWeibo,
+		]
+
+		self.viewController.present(activityViewController, animated: true, completion: nil)
 	}
 
 }

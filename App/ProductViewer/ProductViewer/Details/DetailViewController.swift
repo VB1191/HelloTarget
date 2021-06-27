@@ -31,6 +31,11 @@ class DetailViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.navigationController?.navigationBar.barTintColor = .white
+
+		let shareBar: UIBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .action, target: self, action: #selector(shareTapped))
+
+		self.navigationItem.rightBarButtonItem = shareBar
+
 		/// set's up presenter for the coordinator
 		coordinator.presenters = [ProductDetailPresenter(detailVC:self,
 													  dispatcher:coordinator.dispatcher)]
@@ -51,6 +56,13 @@ class DetailViewController: UIViewController {
 		productDetailView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
 		productDetailView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
 		productDetailView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+	}
+
+	@objc func shareTapped() {
+		guard let presenter = coordinator.presenters.first as? ProductDetailPresenter else {
+			return
+		}
+		presenter.shareButtonClicked()
 	}
 
 }

@@ -20,3 +20,9 @@ struct DealAddToListPressed: EventType {
 	/// viewState of product to be added
 	let productToAdd: DetailViewState
 }
+
+/// Event dispatched when share button is clicked
+struct DealShare: EventType {
+	// product to be shared
+	let productToShare: DetailViewState
+}
