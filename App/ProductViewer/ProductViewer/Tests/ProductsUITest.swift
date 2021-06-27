@@ -44,12 +44,11 @@ class ProductsUITest: XCTestCase {
 		let titleOfFirstCell = firstCell.staticTexts["productTitle"]
 		XCTAssertFalse(titleOfFirstCell.label.isEmpty, "First cell's title is empty")
 
-		/// Assert that atleast one price - sale/original is visible
-		let originalPriceOfFirstCell = firstCell.staticTexts["originalSalePrice"]
+		/// Assert that product sale price is visible
 		let salePriceOfFirstCell = firstCell.staticTexts["productSalePrice"]
 
-		let atleastOnePriceAvailable = !originalPriceOfFirstCell.label.isEmpty || !salePriceOfFirstCell.label.isEmpty
-		XCTAssert(atleastOnePriceAvailable, "First cell doesnt have sale price or original price text")
+		let salePriceTextNotEmpty = !salePriceOfFirstCell.label.isEmpty
+		XCTAssert(salePriceTextNotEmpty, "First cell doesnt have price text")
 
 		/// Now validate detail page
 		firstCell.tap()
