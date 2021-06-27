@@ -24,6 +24,7 @@ struct ListItemViewState: TempoViewStateItem, Equatable {
     let image: UIImage?
 	let aisle: String
 	let imageURL: String?
+	let description: String
 
 	func getFontForPriceLabel() -> UIFont {
 		if let price = salePrice, !price.isEmpty {

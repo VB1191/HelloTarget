@@ -14,20 +14,11 @@ final class ProductListView: UIView, ReusableView {
 	static var reuseID: String = "ProductListViewIdentifier"
 
 	/// TODO: accessibility ids
-	internal lazy var rightStackView: UIStackView = {
-		let stack: UIStackView = UIStackView()
-		stack.distribution = .fill
-		stack.axis = .vertical
-		stack.spacing = 16
-		stack.translatesAutoresizingMaskIntoConstraints = false
-		return stack
-	}()
-
 	internal lazy var titleLabel: UILabel = {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
 		label.font = UIFont.systemFont(ofSize: 22.0, weight: .regular)
-		label.numberOfLines = 0
+		label.numberOfLines = 2
 		label.lineBreakMode = .byTruncatingTail
 		label.accessibilityIdentifier = "productTitle"
 		return label
@@ -44,9 +35,7 @@ final class ProductListView: UIView, ReusableView {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
 		label.font = UIFont.systemFont(ofSize: 26.0, weight: .medium)
-		label.setContentHuggingPriority(.defaultHigh, for: .vertical)
-		label.setContentHuggingPriority(.defaultHigh, for: .horizontal)
-		label.textColor = .targetRed
+		label.textColor = .targetBullseyeRedColor
 		label.accessibilityIdentifier = "productSalePrice"
 		return label
 	}()
@@ -54,7 +43,6 @@ final class ProductListView: UIView, ReusableView {
 	internal lazy var originalPriceLabel: UILabel = {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
-		label.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
 		label.textColor = .gray
 		label.accessibilityIdentifier = "originalSalePrice"
 		return label
@@ -65,7 +53,7 @@ final class ProductListView: UIView, ReusableView {
 		stack.distribution = .fill
 		stack.axis = .vertical
 		stack.spacing = 6
-		stack.setContentHuggingPriority(.defaultHigh, for: .vertical)
+		stack.setContentHuggingPriority(.defaultLow, for: .vertical)
 		stack.translatesAutoresizingMaskIntoConstraints = false
 		return stack
 	}()
@@ -112,7 +100,7 @@ final class ProductListView: UIView, ReusableView {
 		productImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16).isActive = true
 		productImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 16).isActive = true
 		productImage.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16).isActive = true
-		productImage.widthAnchor.constraint(equalToConstant: 80.0).isActive = true
+		productImage.widthAnchor.constraint(equalToConstant: 100.0).isActive = true
 
 		/// title
 		titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 16).isActive = true

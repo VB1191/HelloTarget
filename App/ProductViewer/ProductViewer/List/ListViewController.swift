@@ -47,7 +47,7 @@ class ListViewController: UIViewController {
         view.addAndPinSubview(collectionView)
         collectionView.contentInset = UIEdgeInsets(top: 20.0, left: 0.0, bottom: 0.0, right: 0.0)
 
-		self.navigationController?.setTargetNavigationBar()
+		self.navigationController?.navigationBar.tintColor = .white
 		self.title = "Deals"
         
         let components: [ComponentType] = [

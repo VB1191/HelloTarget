@@ -26,13 +26,6 @@ class ListCoordinator: TempoCoordinator {
             updateUI()
         }
     }
-
-    
-    fileprivate func updateUI() {
-        for presenter in presenters {
-            presenter.present(viewState)
-        }
-    }
     
     let dispatcher = Dispatcher()
     
@@ -47,14 +40,19 @@ class ListCoordinator: TempoCoordinator {
         updateState()
         registerListeners()
     }
+
+	fileprivate func updateUI() {
+		for presenter in presenters {
+			presenter.present(viewState)
+		}
+	}
     
     // MARK: ListCoordinator
     
     fileprivate func registerListeners() {
-        dispatcher.addObserver(ListItemPressed.self) { [weak self] e in
-            let alert = UIAlertController(title: "Item selected!", message: "🐶", preferredStyle: .alert)
-            alert.addAction( UIAlertAction(title: "OK", style: .cancel, handler: nil) )
-            self?.viewController.present(alert, animated: true, completion: nil)
+        dispatcher.addObserver(ListItemPressed.self) { [weak self] listViewStateEvent in
+			let detailCoordinator = DetailCoordinator(previousViewState: listViewStateEvent.selectedViewState)
+			self?.viewController.navigationController?.pushViewController(detailCoordinator.viewController, animated: true)
         }
     }
     
@@ -77,9 +75,10 @@ class ListCoordinator: TempoCoordinator {
 						title: NSLocalizedString(product.title, comment: ""),
 						salePrice: product.salePrice?.displayString ?? "",
 						originalPrice: product.regularPrice.displayString,
-						image: UIImage(named: "\(1)"),
+						image: UIImage(named: "targetGray"),
 						aisle: "Asile\n\(product.aisle)",
-						imageURL: product.imageUrl
+						imageURL: product.imageUrl,
+						description: product.description
 					)
 					viewStateItems.append(viewStateItem)
 				}

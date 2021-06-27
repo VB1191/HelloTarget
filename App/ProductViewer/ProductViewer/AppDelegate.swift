@@ -16,10 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         window = UIWindow(frame: UIScreen.main.bounds)
-		var nav1 = UINavigationController()
+		var navigationController = UINavigationController()
+		navigationController.setTargetNavigationBar()
 		let initialVC = listCoordinator.viewController
-		nav1.viewControllers = [initialVC]
-        window?.rootViewController = nav1
+		navigationController.viewControllers = [initialVC]
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         
         return true
@@ -50,7 +51,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func application(_ application: UIApplication, willContinueUserActivityWithType userActivityType: String) -> Bool {
 		if userActivityType == ListViewController.dealsListActivity {
 			// go to deals list
-			print("V: Go to dealssss")
 		}
 		return true
 	}

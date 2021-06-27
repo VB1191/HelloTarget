@@ -7,4 +7,6 @@
 
 import Tempo
 
-struct ListItemPressed: EventType {}
+struct ListItemPressed: EventType {
+	let selectedViewState: ListItemViewState
+}

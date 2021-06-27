@@ -18,6 +18,12 @@
 		F822446F2685E11D00753398 /* ProductViewerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822446E2685E11D00753398 /* ProductViewerUITests.swift */; };
 		F82244782685E12900753398 /* ProductsUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82244642685E03700753398 /* ProductsUITest.swift */; };
 		F822448026862F6500753398 /* ImageLoaderHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F822447F26862F6500753398 /* ImageLoaderHelper.swift */; };
+		F8261CBC268786B7006C968B /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8261CBB268786B7006C968B /* ProductDetailView.swift */; };
+		F8261CBE268786C6006C968B /* ProductDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8261CBD268786C6006C968B /* ProductDetailPresenter.swift */; };
+		F8261CC026878B05006C968B /* DetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8261CBF26878B05006C968B /* DetailCoordinator.swift */; };
+		F8261CC226878B15006C968B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8261CC126878B15006C968B /* DetailViewController.swift */; };
+		F8261CC426878B27006C968B /* DetailViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8261CC326878B27006C968B /* DetailViewState.swift */; };
+		F8261CC626878B3A006C968B /* DetailListEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8261CC526878B3A006C968B /* DetailListEvents.swift */; };
 		F82B7F7126837973009B5ABA /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B7F7026837973009B5ABA /* UINavigationControllerExtension.swift */; };
 		F82B7F75268379C2009B5ABA /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B7F74268379C2009B5ABA /* UIColorExtension.swift */; };
 		F82B7F7F2683B5A3009B5ABA /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B7F7E2683B5A3009B5ABA /* Price.swift */; };
@@ -29,6 +35,7 @@
 		F82B7FF326849071009B5ABA /* ResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B7FF226849071009B5ABA /* ResponseHandler.swift */; };
 		F82B7FF626849173009B5ABA /* WebServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B7FF526849173009B5ABA /* WebServiceManager.swift */; };
 		F832C8682687558D008E750E /* NSUserActivityExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F832C8672687558D008E750E /* NSUserActivityExtension.swift */; };
+		F8D6D3F8268764E7002CFBCA /* TargetLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8D6D3F626876488002CFBCA /* TargetLaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +52,6 @@
 		5B259CC61D6630E0001D755F /* ProductViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProductViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B259CC91D6630E0001D755F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B259CD01D6630E0001D755F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5B259CD31D6630E0001D755F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B259CD51D6630E0001D755F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B2675A11D674B400015A238 /* ListEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListEvents.swift; sourceTree = "<group>"; };
 		5B302A8E1D663A8500FA2FFD /* ProductListComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductListComponent.swift; sourceTree = "<group>"; };
@@ -59,9 +65,14 @@
 		F822446E2685E11D00753398 /* ProductViewerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewerUITests.swift; sourceTree = "<group>"; };
 		F82244702685E11D00753398 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F822447F26862F6500753398 /* ImageLoaderHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderHelper.swift; sourceTree = "<group>"; };
+		F8261CBB268786B7006C968B /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
+		F8261CBD268786C6006C968B /* ProductDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailPresenter.swift; sourceTree = "<group>"; };
+		F8261CBF26878B05006C968B /* DetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCoordinator.swift; sourceTree = "<group>"; };
+		F8261CC126878B15006C968B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F8261CC326878B27006C968B /* DetailViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewState.swift; sourceTree = "<group>"; };
+		F8261CC526878B3A006C968B /* DetailListEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailListEvents.swift; sourceTree = "<group>"; };
 		F82B7F7026837973009B5ABA /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
 		F82B7F74268379C2009B5ABA /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
-		F82B7F77268381F3009B5ABA /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
 		F82B7F7E2683B5A3009B5ABA /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
 		F82B7F812683B704009B5ABA /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		F82B7F842683B802009B5ABA /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
@@ -71,6 +82,7 @@
 		F82B7FF226849071009B5ABA /* ResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseHandler.swift; sourceTree = "<group>"; };
 		F82B7FF526849173009B5ABA /* WebServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceManager.swift; sourceTree = "<group>"; };
 		F832C8672687558D008E750E /* NSUserActivityExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSUserActivityExtension.swift; sourceTree = "<group>"; };
+		F8D6D3F626876488002CFBCA /* TargetLaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TargetLaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +107,7 @@
 		5B259CBD1D6630E0001D755F = {
 			isa = PBXGroup;
 			children = (
+				F8D6D3F626876488002CFBCA /* TargetLaunchScreen.storyboard */,
 				5B259CC81D6630E0001D755F /* ProductViewer */,
 				F822446D2685E11D00753398 /* ProductViewerUITests */,
 				5B259CC71D6630E0001D755F /* Products */,
@@ -119,12 +132,10 @@
 				F82B7F872683B890009B5ABA /* Networking */,
 				F82B7F7D2683B586009B5ABA /* Models */,
 				F82B7F6F2683794F009B5ABA /* Extensions */,
-				5BEF08101D66328D006BF0C0 /* Detail */,
+				F8261CB92687867C006C968B /* Details */,
 				5BEF080F1D663283006BF0C0 /* List */,
 				5B259CC91D6630E0001D755F /* AppDelegate.swift */,
 				5B259CD01D6630E0001D755F /* Assets.xcassets */,
-				F82B7F77268381F3009B5ABA /* ColorAssets.xcassets */,
-				5B259CD21D6630E0001D755F /* LaunchScreen.storyboard */,
 				5B259CD51D6630E0001D755F /* Info.plist */,
 			);
 			path = ProductViewer;
@@ -150,13 +161,6 @@
 			path = List;
 			sourceTree = "<group>";
 		};
-		5BEF08101D66328D006BF0C0 /* Detail */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Detail;
-			sourceTree = "<group>";
-		};
 		5BEF081D1D663573006BF0C0 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +177,27 @@
 				F82244702685E11D00753398 /* Info.plist */,
 			);
 			path = ProductViewerUITests;
+			sourceTree = "<group>";
+		};
+		F8261CB92687867C006C968B /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				F8261CBA2687869B006C968B /* Components */,
+				F8261CC526878B3A006C968B /* DetailListEvents.swift */,
+				F8261CC326878B27006C968B /* DetailViewState.swift */,
+				F8261CBF26878B05006C968B /* DetailCoordinator.swift */,
+				F8261CC126878B15006C968B /* DetailViewController.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		F8261CBA2687869B006C968B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F8261CBB268786B7006C968B /* ProductDetailView.swift */,
+				F8261CBD268786C6006C968B /* ProductDetailPresenter.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		F82B7F6F2683794F009B5ABA /* Extensions */ = {
@@ -314,6 +339,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8D6D3F8268764E7002CFBCA /* TargetLaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,7 +358,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F832C8682687558D008E750E /* NSUserActivityExtension.swift in Sources */,
+				F8261CBC268786B7006C968B /* ProductDetailView.swift in Sources */,
+				F8261CC226878B15006C968B /* DetailViewController.swift in Sources */,
 				F822448026862F6500753398 /* ImageLoaderHelper.swift in Sources */,
+				F8261CC026878B05006C968B /* DetailCoordinator.swift in Sources */,
 				5BEF08161D66333C006BF0C0 /* ListViewState.swift in Sources */,
 				5B259CCA1D6630E0001D755F /* AppDelegate.swift in Sources */,
 				5BEF081F1D663598006BF0C0 /* ProductListView.swift in Sources */,
@@ -340,6 +369,7 @@
 				5B302A8F1D663A8500FA2FFD /* ProductListComponent.swift in Sources */,
 				F82B7F8F2683BFA3009B5ABA /* ProductListServiceHelper.swift in Sources */,
 				F82B7F822683B704009B5ABA /* Product.swift in Sources */,
+				F8261CC626878B3A006C968B /* DetailListEvents.swift in Sources */,
 				5BEF08141D663304006BF0C0 /* ListViewController.swift in Sources */,
 				F82B7F75268379C2009B5ABA /* UIColorExtension.swift in Sources */,
 				5BEF08121D6632EC006BF0C0 /* ListCoordinator.swift in Sources */,
@@ -348,8 +378,10 @@
 				F82B7F8B2683BB53009B5ABA /* MockProductsList.swift in Sources */,
 				F82B7FF326849071009B5ABA /* ResponseHandler.swift in Sources */,
 				5B2675A21D674B400015A238 /* ListEvents.swift in Sources */,
+				F8261CBE268786C6006C968B /* ProductDetailPresenter.swift in Sources */,
 				F82B7FF626849173009B5ABA /* WebServiceManager.swift in Sources */,
 				F82B7F7126837973009B5ABA /* UINavigationControllerExtension.swift in Sources */,
+				F8261CC426878B27006C968B /* DetailViewState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,17 +403,6 @@
 			targetProxy = F82244712685E11D00753398 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		5B259CD21D6630E0001D755F /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5B259CD31D6630E0001D755F /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		5B259CD61D6630E0001D755F /* Debug */ = {
@@ -493,7 +514,6 @@
 		5B259CD91D6630E0001D755F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ProductViewer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 2.1;
@@ -507,7 +527,6 @@
 		5B259CDA1D6630E0001D755F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ProductViewer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 2.1;
