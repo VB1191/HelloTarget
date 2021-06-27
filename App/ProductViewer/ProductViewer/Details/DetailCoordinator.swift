@@ -14,7 +14,7 @@ import Tempo
  */
 class DetailCoordinator: TempoCoordinator {
 
-	// MARK: Presenters, view controllers, view state.
+	// MARK: Presenters, view controllers, view state, Dispatcher
 
 	var presenters = [TempoPresenterType]() {
 		didSet {
@@ -25,13 +25,6 @@ class DetailCoordinator: TempoCoordinator {
 	fileprivate var viewState: DetailViewState {
 		didSet {
 			updateUI()
-		}
-	}
-
-
-	fileprivate func updateUI() {
-		for presenter in presenters {
-			presenter.present(viewState)
 		}
 	}
 
@@ -46,13 +39,13 @@ class DetailCoordinator: TempoCoordinator {
 	required init(previousViewState: ListItemViewState) {
 		/// check this. basically need to init from what was selected from list
 		viewState = DetailViewState(title: previousViewState.title, imageURL: previousViewState.imageURL, salePrice: previousViewState.salePrice, originialPrics: previousViewState.originalPrice, description: previousViewState.description)
-		updateState()
 		registerListeners()
 	}
 
 	// MARK: ListCoordinator
 
 	fileprivate func registerListeners() {
+		// Temporary handling of button clicks
 		dispatcher.addObserver(DealAddToListPressed.self) { [weak self] viewState in
 			let alert = UIAlertController(title: "\(viewState.productToAdd.title)", message: "added to list", preferredStyle: .alert)
 			alert.addAction( UIAlertAction(title: "OK", style: .cancel, handler: nil) )
@@ -66,6 +59,10 @@ class DetailCoordinator: TempoCoordinator {
 		}
 	}
 
-	func updateState() {
+	fileprivate func updateUI() {
+		for presenter in presenters {
+			presenter.present(viewState)
+		}
 	}
+
 }

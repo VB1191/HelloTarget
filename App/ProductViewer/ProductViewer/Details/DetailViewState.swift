@@ -9,6 +9,9 @@
 import Foundation
 import Tempo
 
+/**
+DetailViewState manages the view representation of ProductDetailView
+*/
 struct DetailViewState: TempoViewState {
 	let title: String
 	let imageURL: String?
@@ -16,6 +19,7 @@ struct DetailViewState: TempoViewState {
 	let originialPrics: String
 	let description: String
 
+	/// Gets font based on salePrice. if salePrice exists 2 price labels are shown - salePrice and original price
 	func getFontForPriceLabel() -> UIFont {
 		if let price = salePrice, !price.isEmpty {
 			return UIFont.systemFont(ofSize: 18)
@@ -24,6 +28,7 @@ struct DetailViewState: TempoViewState {
 		}
 	}
 
+	/// Gets font String for originialPrice based on salePrice availability
 	func getOriginalPriceLabelText() -> String {
 		if let price = salePrice, !price.isEmpty {
 			return "Was \(originialPrics)"

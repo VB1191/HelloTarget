@@ -9,6 +9,7 @@
 import CoreSpotlight // SearchableAttributeSet
 import MobileCoreServices
 
+/// Enum that can keep track of all different styles of nsuseractivity
 enum NSUserActivityStyle {
 	case showTargetDeals
 }
@@ -22,7 +23,6 @@ extension NSUserActivity {
 	struct ActivityTitles {
 		static let dealsTitle = NSLocalizedString("Show deals", comment: "Show deals")
 	}
-
 
 	struct SearchableDescription {
 		static let dealsDescription = NSLocalizedString("Show deals", comment: "Show deals")

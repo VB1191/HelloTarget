@@ -10,32 +10,38 @@ import Foundation
 import Tempo
 import UIKit
 
+/**
+View controller that displays product details view
+*/
 class DetailViewController: UIViewController {
 
-	class func viewControllerFor(coordinator: TempoCoordinator) -> DetailViewController {
-		let viewController = DetailViewController()
-		viewController.coordinator = coordinator as? DetailCoordinator
-		return viewController
-	}
-
+	/// Dispatcher for any new events recieved
 	let dispatcher = Dispatcher()
 
+	/// Coordinator that handles this View controller
 	fileprivate var coordinator: TempoCoordinator!
 
+	/// main View for the view controller
 	var productDetailView : ProductDetailView = {
 		let productDetailView = ProductDetailView()
 		productDetailView.translatesAutoresizingMaskIntoConstraints = false
 		return productDetailView
 	}()
 
-	
-
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		self.navigationController?.navigationBar.barTintColor = .white
+		/// set's up presenter for the coordinator
 		coordinator.presenters = [ProductDetailPresenter(detailVC:self,
 													  dispatcher:coordinator.dispatcher)]
 		setupView()
+	}
+
+	/// Returns DetailViewController with coordinator set
+	class func viewControllerFor(coordinator: TempoCoordinator) -> DetailViewController {
+		let viewController = DetailViewController()
+		viewController.coordinator = coordinator as? DetailCoordinator
+		return viewController
 	}
 
 	func setupView() {

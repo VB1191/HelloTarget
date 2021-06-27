@@ -50,20 +50,26 @@ class ListCoordinator: TempoCoordinator {
     // MARK: ListCoordinator
     
     fileprivate func registerListeners() {
+		/// Goes to product details on click of item. Since product details shows same data as seen on list, new API call isnt made.
+		/// Same details are passed to details page
         dispatcher.addObserver(ListItemPressed.self) { [weak self] listViewStateEvent in
 			let detailCoordinator = DetailCoordinator(previousViewState: listViewStateEvent.selectedViewState)
 			self?.viewController.navigationController?.pushViewController(detailCoordinator.viewController, animated: true)
         }
     }
-    
+
+	/// Updates the view state that was initially craeted by calling API and fetching results
     func updateState() {
 
-		fetchProductsList() { (model, error) in
+		fetchProductsList() { (products, error) in
 			if let errorFound = error {
-				print("Error")
+				print("Error: Fetching products error \(errorFound)") // Ideally send to splunk
+				let alert = UIAlertController(title: "Uh-oh Something went wrong", message: "Please try again later", preferredStyle: .alert)
+				alert.addAction( UIAlertAction(title: "OK", style: .cancel, handler: nil) )
+				self.viewController.present(alert, animated: true, completion: nil)
 			} else {
 
-				let productsObject: Products? = model
+				let productsObject: Products? = products
 
 				guard let productsArray: [Product] =  productsObject?.products else {
 					return
@@ -86,31 +92,9 @@ class ListCoordinator: TempoCoordinator {
 				self.viewState.listItems = viewStateItems
 			}
 		}
-
-
-		/* 2. Load from mock
-		let productsObject: Products? = MockProductsList().mockProducts
-
-		guard let productsArray: [Product] =  productsObject?.products else {
-			return
-		}
-
-		var viewStateItems = [ListItemViewState]()
-		for product in productsArray {
-			let viewStateItem = ListItemViewState(title: NSLocalizedString(product.title, comment: ""), price: product.regularPrice.displayString, image: UIImage(named: "\(1)"))
-			viewStateItems.append(viewStateItem)
-		}
-
-		viewState.listItems = viewStateItems
-		*/
-
-		// 1. initial
-//        viewState.listItems = (1..<10).map { index in
-//            ListItemViewState(title: "Puppies!!!", price: "$9.99", image: UIImage(named: "\(index)"))
-//        }
     }
 
-
+	/// fetches products list with tge help of ProductListServiceHelper and WebServiceManager
 	func fetchProductsList(param: [String: Any] = [:], completion: @escaping (Products?, NetworkError?) -> ()) {
 		let productListServiceHelper = ProductListServiceHelper()
 

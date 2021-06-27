@@ -10,6 +10,16 @@
 import XCTest
 @testable import ProductViewer
 
+/**
+ProductsUITest is a smoke test for following steps:
+1. Launch app
+2. Check data exists (Integration test - checks if data exists)
+3. check Cells loaded (testing UI)
+4.  check deatil loaded (testing UI)
+5. Validates UI elements on detail (testing UI)
+6. Checks data exits (Integration)
+
+*/
 class ProductsUITest: XCTestCase {
 
 	override func setUp() {
@@ -18,6 +28,7 @@ class ProductsUITest: XCTestCase {
 		XCUIApplication().launch()
 	}
 
+	// Smoke test for app
 	func testProductListView() {
 		let collectionView = XCUIApplication().collectionViews["productsListCollectionView"]
 

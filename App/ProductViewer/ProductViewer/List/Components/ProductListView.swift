@@ -8,12 +8,16 @@
 import UIKit
 import Tempo
 
-
+/**
+UIView that shows all product details in a list cell
+*/
 final class ProductListView: UIView, ReusableView {
 
 	static var reuseID: String = "ProductListViewIdentifier"
 
-	/// TODO: accessibility ids
+	// MARK: Properties
+
+	/// title for product
 	internal lazy var titleLabel: UILabel = {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
@@ -24,6 +28,7 @@ final class ProductListView: UIView, ReusableView {
 		return label
 	}()
 
+	/// seperator line
 	internal lazy var line: UIView = {
 		let lineView: UIView = UIView()
 		lineView.backgroundColor = .lightGray
@@ -31,6 +36,7 @@ final class ProductListView: UIView, ReusableView {
 		return lineView
 	}()
 
+	/// sale price label
 	internal lazy var salePriceLabel: UILabel = {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
@@ -40,6 +46,7 @@ final class ProductListView: UIView, ReusableView {
 		return label
 	}()
 
+	// original price for product
 	internal lazy var originalPriceLabel: UILabel = {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
@@ -48,6 +55,7 @@ final class ProductListView: UIView, ReusableView {
 		return label
 	}()
 
+	/// stack view for prices
 	internal lazy var pricesStackView: UIStackView = {
 		let stack: UIStackView = UIStackView()
 		stack.distribution = .fill
@@ -58,6 +66,7 @@ final class ProductListView: UIView, ReusableView {
 		return stack
 	}()
 
+	/// product image
 	internal lazy var productImage: UIImageView = {
 		let imageView: UIImageView = UIImageView()
 		imageView.contentMode = .scaleAspectFit
@@ -66,6 +75,7 @@ final class ProductListView: UIView, ReusableView {
 		return imageView
 	}()
 
+	// MARK: Initaializer
 	init() {
 		super.init(frame: .zero)
 		accessibilityIdentifier = "ProductListCellView"
@@ -77,6 +87,9 @@ final class ProductListView: UIView, ReusableView {
 		fatalError("init(coder:) has not been implemented")
 	}
 
+	// MARK: Setup
+
+	// Adds views in view heirachy
 	func setupView() {
 		self.layer.cornerRadius = 10
 		self.layer.borderColor = UIColor.gray.cgColor
@@ -91,10 +104,12 @@ final class ProductListView: UIView, ReusableView {
 		addSubview(pricesStackView)
 	}
 
+	/// sets font based on viewState
 	func setPriceLabelFont(font: UIFont) {
 		originalPriceLabel.font = font
 	}
 
+	/// sets up constraints
 	func setupConstraints() {
 		/// image
 		productImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16).isActive = true

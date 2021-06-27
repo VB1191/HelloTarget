@@ -9,9 +9,14 @@
 import UIKit
 import Tempo
 
-final class ProductDetailView: UIView, ReusableView {
-	static var reuseID: String = "ProductDetailViewIdentifier"
+/**
+UIView that shows all product details
+*/
+final class ProductDetailView: UIView {
 
+	// MARK: Properties
+
+	/// Label for product title
 	internal lazy var titleLabel: UILabel = {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
@@ -23,6 +28,7 @@ final class ProductDetailView: UIView, ReusableView {
 		return label
 	}()
 
+	/// Image for product
 	internal lazy var productImageView: UIImageView = {
 		let imageView = UIImageView()
 		imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -31,6 +37,7 @@ final class ProductDetailView: UIView, ReusableView {
 		return imageView
 	}()
 
+	/// Label for sale price if any
 	internal lazy var salePriceLabel: UILabel = {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
@@ -41,6 +48,7 @@ final class ProductDetailView: UIView, ReusableView {
 		return label
 	}()
 
+	/// Label for original price of product
 	internal lazy var originalPriceLabel: UILabel = {
 		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
@@ -51,6 +59,7 @@ final class ProductDetailView: UIView, ReusableView {
 		return label
 	}()
 
+	/// stack view for sale price and original price
 	internal lazy var pricesStackView: UIStackView = {
 		let stack: UIStackView = UIStackView()
 		stack.distribution = .fill
@@ -62,6 +71,7 @@ final class ProductDetailView: UIView, ReusableView {
 		return stack
 	}()
 
+	/// stack view for sale price and original price
 	internal lazy var descriptionLabel: UILabel = {
 		let label = UILabel()
 		label.numberOfLines = 0
@@ -72,6 +82,7 @@ final class ProductDetailView: UIView, ReusableView {
 		return label
 	}()
 
+	/// Add to cart UIButton
 	internal lazy var addToCartButton: UIButton = {
 		let button = UIButton(type: .roundedRect)
 		button.setTitle("Add to cart", for: .normal)
@@ -84,6 +95,7 @@ final class ProductDetailView: UIView, ReusableView {
 		return button
 	}()
 
+	/// Add to list UIButton
 	internal lazy var addToListButton: UIButton = {
 		let button = UIButton(type: .roundedRect)
 		button.setTitle("Add to list", for: .normal)
@@ -96,6 +108,7 @@ final class ProductDetailView: UIView, ReusableView {
 		return button
 	}()
 
+	/// container stack view for all UI elements
 	internal lazy var containerStackView: UIStackView = {
 		let stack: UIStackView = UIStackView()
 		stack.distribution = .fill
@@ -107,6 +120,7 @@ final class ProductDetailView: UIView, ReusableView {
 		return stack
 	}()
 
+	/// Scroll view for content on details page
 	internal lazy var scrollView: UIScrollView = {
 		let scrollView = UIScrollView()
 		scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -114,13 +128,15 @@ final class ProductDetailView: UIView, ReusableView {
 		return scrollView
 	}()
 
-	lazy var contentView: UIView = {
+	/// content view for the scroll view
+	internal lazy var contentView: UIView = {
 		let view = UIView()
 		view.translatesAutoresizingMaskIntoConstraints = false
 		view.accessibilityIdentifier = "productDetailContentView"
 		return view
 	}()
 
+	// MARK: Initializer
 	init() {
 		super.init(frame: .zero)
 		setupView()
@@ -131,6 +147,8 @@ final class ProductDetailView: UIView, ReusableView {
 		fatalError("init(coder:) has not been implemented")
 	}
 
+	// MARK: Setup
+	/// sets up views by adding subviews
 	func setupView() {
 		self.backgroundColor = .white
 		scrollView.backgroundColor = .white
@@ -154,6 +172,7 @@ final class ProductDetailView: UIView, ReusableView {
 		scrollView.flashScrollIndicators()
 	}
 
+	/// sets up constraints for views added
 	func setupConstraints() {
 		/// scroll view
 		scrollView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
@@ -176,6 +195,7 @@ final class ProductDetailView: UIView, ReusableView {
 
 	}
 
+	/// Sets font based on what viewState asks to set
 	func setPriceLabelFont(font: UIFont) {
 		originalPriceLabel.font = font
 	}

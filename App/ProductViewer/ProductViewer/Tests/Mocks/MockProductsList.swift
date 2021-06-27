@@ -57,3 +57,20 @@ class MockProductsList {
 		}
 	}()
 }
+
+/* 2. Load from mock
+let productsObject: Products? = MockProductsList().mockProducts
+
+guard let productsArray: [Product] =  productsObject?.products else {
+	return
+}
+
+var viewStateItems = [ListItemViewState]()
+for product in productsArray {
+	let viewStateItem = ListItemViewState(title: NSLocalizedString(product.title, comment: ""), price: product.regularPrice.displayString, image: UIImage(named: "\(1)"))
+	viewStateItems.append(viewStateItem)
+}
+
+viewState.listItems = viewStateItems
+*/
+

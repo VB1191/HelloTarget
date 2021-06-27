@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Enumeration for any NetworkError
 internal enum NetworkError: Error {
 	case emptyDataSent
 	case emptyResults

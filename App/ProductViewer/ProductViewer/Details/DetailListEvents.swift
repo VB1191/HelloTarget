@@ -9,10 +9,14 @@
 import Foundation
 import Tempo
 
+/// Event dispatched when add to cart button is clicked
 struct DealAddToCartPressed: EventType {
+	/// viewState of product to be added
 	let productToAdd: DetailViewState
 }
 
+/// Event dispatched when add to list button is clicked
 struct DealAddToListPressed: EventType {
+	/// viewState of product to be added
 	let productToAdd: DetailViewState
 }

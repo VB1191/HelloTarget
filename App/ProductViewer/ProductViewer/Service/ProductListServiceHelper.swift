@@ -7,13 +7,19 @@
 //
 
 import Foundation
-
+/**
+ProductListServiceHelper conforms to protocol composition of RequestHandler and ResponseHandler
+An instance of this struct will provide implementations for protocol methods
+*/
 public struct ProductListServiceHelper: RequestHandler & ResponseHandler {
 
+	/// Resposnse data type for ProductListServiceHelper is Products
 	typealias ResponseDataType = Products
+	/// URL to be hit to get deals list
+	private let dealsURLString = "https://api.target.com/mobile_case_study_deals/v1/deals"
 
 	func getRequest(from param: [String: Any]) -> URLRequest? {
-			let urlString =  "https://api.target.com/mobile_case_study_deals/v1/deals"
+			let urlString = dealsURLString
 			if var url = URL(string: urlString) {
 				if param.count > 0 {
 					url = setQueryParams(parameters: param, url: url)

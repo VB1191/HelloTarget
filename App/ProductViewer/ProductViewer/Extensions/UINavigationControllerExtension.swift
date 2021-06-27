@@ -8,12 +8,15 @@
 
 import UIKit
 
+/// Extenstion for serviceHelper
 extension UINavigationController {
 
+	/// Sets a default target themed navigation bar
 	public func setTargetNavigationBar() {
 		setNavigationBarBackgroundColor(color: .targetBullseyeRedColor, tittleTextAttributesColor: UIColor.white, barStyle: .default)
 	}
 
+	/// Sets custom navigation bar
 	public func setNavigationBarBackgroundColor(color: UIColor?,
 												tittleTextAttributesColor: UIColor,
 												barStyle: UIBarStyle = .default) {

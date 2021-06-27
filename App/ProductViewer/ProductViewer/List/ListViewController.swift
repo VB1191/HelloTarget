@@ -11,21 +11,15 @@ import Tempo
 
 class ListViewController: UIViewController {
 
+	// MARK: Properties
+
+	// userActivity key that gets donated
 	static let dealsListActivity = "com.target.productviewer.showdeals"
 
-	override open var preferredStatusBarStyle: UIStatusBarStyle {
-		return .lightContent
-	}
-    
-    class func viewControllerFor(coordinator: TempoCoordinator) -> ListViewController {
-        let viewController = ListViewController()
-        viewController.coordinator = coordinator
-        
-        return viewController
-    }
-    
+	// coordinator for this VC
     fileprivate var coordinator: TempoCoordinator!
-    
+
+	// Collection view
     lazy var collectionView: UICollectionView = {
         let harmonyLayout = HarmonyLayout()
         
@@ -63,6 +57,13 @@ class ListViewController: UIViewController {
 		donateShortcut()
     }
 
+	class func viewControllerFor(coordinator: TempoCoordinator) -> ListViewController {
+		let viewController = ListViewController()
+		viewController.coordinator = coordinator
+
+		return viewController
+	}
+
 	/**
 	Donation for shortcut: Donation for shortcut is made everytime users load the deals page
 	( Even if users dont create a Shorcut from the app, this donation will let iOS know that it can suggest users to create a shortcut for this action.
@@ -76,9 +77,7 @@ class ListViewController: UIViewController {
 			dealsActivity.becomeCurrent()
 		}
 	}
-    
-    override func viewDidAppear(_ animated: Bool) {
-    }
+
     
 }
 

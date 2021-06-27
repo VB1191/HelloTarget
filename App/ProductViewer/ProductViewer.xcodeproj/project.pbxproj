@@ -25,7 +25,6 @@
 		F8261CC426878B27006C968B /* DetailViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8261CC326878B27006C968B /* DetailViewState.swift */; };
 		F8261CC626878B3A006C968B /* DetailListEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8261CC526878B3A006C968B /* DetailListEvents.swift */; };
 		F82B7F7126837973009B5ABA /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B7F7026837973009B5ABA /* UINavigationControllerExtension.swift */; };
-		F82B7F75268379C2009B5ABA /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B7F74268379C2009B5ABA /* UIColorExtension.swift */; };
 		F82B7F7F2683B5A3009B5ABA /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B7F7E2683B5A3009B5ABA /* Price.swift */; };
 		F82B7F822683B704009B5ABA /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B7F812683B704009B5ABA /* Product.swift */; };
 		F82B7F852683B802009B5ABA /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B7F842683B802009B5ABA /* Products.swift */; };
@@ -72,7 +71,6 @@
 		F8261CC326878B27006C968B /* DetailViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewState.swift; sourceTree = "<group>"; };
 		F8261CC526878B3A006C968B /* DetailListEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailListEvents.swift; sourceTree = "<group>"; };
 		F82B7F7026837973009B5ABA /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
-		F82B7F74268379C2009B5ABA /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		F82B7F7E2683B5A3009B5ABA /* Price.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
 		F82B7F812683B704009B5ABA /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		F82B7F842683B802009B5ABA /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
@@ -204,7 +202,6 @@
 			isa = PBXGroup;
 			children = (
 				F82B7F7026837973009B5ABA /* UINavigationControllerExtension.swift */,
-				F82B7F74268379C2009B5ABA /* UIColorExtension.swift */,
 				F832C8672687558D008E750E /* NSUserActivityExtension.swift */,
 			);
 			path = Extensions;
@@ -371,7 +368,6 @@
 				F82B7F822683B704009B5ABA /* Product.swift in Sources */,
 				F8261CC626878B3A006C968B /* DetailListEvents.swift in Sources */,
 				5BEF08141D663304006BF0C0 /* ListViewController.swift in Sources */,
-				F82B7F75268379C2009B5ABA /* UIColorExtension.swift in Sources */,
 				5BEF08121D6632EC006BF0C0 /* ListCoordinator.swift in Sources */,
 				F82B7F852683B802009B5ABA /* Products.swift in Sources */,
 				F82B7FF026848FCA009B5ABA /* RequestHandler.swift in Sources */,

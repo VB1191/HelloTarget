@@ -8,23 +8,33 @@
 
 import Tempo
 
+/**
+ProductDetailPresenter configures (presents) a new viewState to ProductDetailView that it recieves
+*/
 class ProductDetailPresenter: TempoPresenter {
 
+	// MARK: Properties
+
+	/// Dispatcher to dispatch new events from the view
 	var dispatcher: Dispatcher?
+	/// View controller whose view will be given the new view state
 	var productDetailVC: DetailViewController
+	/// Current view state to keep track of what is selected at class level
 	var currentViewState: DetailViewState?
 
+	// MARK: Initializer
 	init(detailVC: DetailViewController, dispatcher: Dispatcher) {
 		self.productDetailVC = detailVC
 		self.dispatcher = dispatcher
 	}
 
+	// MARK: Setup
 	func present(_ viewState: DetailViewState) {
 		let detailView: ProductDetailView = self.productDetailVC.productDetailView
 		configureView(detailView, viewState: viewState)
 	}
 
-	/// Not protocol method: keeping parity with Component
+	/// Configures the detailView with new view state
 	func configureView(_ detailView: ProductDetailView, viewState: DetailViewState) {
 
 		currentViewState = viewState
@@ -35,7 +45,7 @@ class ProductDetailPresenter: TempoPresenter {
 		detailView.descriptionLabel.text = viewState.description
 		detailView.setPriceLabelFont(font: viewState.getFontForPriceLabel())
 
-		/// add targets
+		/// add targets for 2 buttons so that dispatcher can dispatch an event when these are inetracted with
 		detailView.addToCartButton.addTarget(self, action: #selector(addToCartButtonClicked) , for: .touchUpInside)
 
 		detailView.addToListButton.addTarget(self, action: #selector(addToListButtonClicked) , for: .touchUpInside)
@@ -51,6 +61,7 @@ class ProductDetailPresenter: TempoPresenter {
 		}
 	}
 
+	/// dispatcher sends a new event stating add to cart was clicked. Observer will handle the implementation
 	@objc func addToCartButtonClicked() {
 		guard let viewState = currentViewState else {
 			return
@@ -58,6 +69,7 @@ class ProductDetailPresenter: TempoPresenter {
 		dispatcher?.triggerEvent(DealAddToCartPressed(productToAdd: viewState))
 	}
 
+	/// dispatcher sends a new event stating add to cart was clicked. Observer will handle the implementation
 	@objc func addToListButtonClicked() {
 		guard let viewState = currentViewState else {
 			return

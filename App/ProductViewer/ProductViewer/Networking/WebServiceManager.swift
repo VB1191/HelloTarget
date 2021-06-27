@@ -15,11 +15,13 @@ struct WebServiceManager<T: RequestHandler & ResponseHandler> {
 	var serviceHelper: T
 	var urlSession: URLSession
 
+	/// Inits with a helper that conforms to RequestHandler & ResponseHandler, urlSession defaulted to .default
 	init(serviceHelper: T, urlSession: URLSession = .shared) {
 		self.serviceHelper = serviceHelper
 		self.urlSession = urlSession
 	}
 
+	/// Loads the data from generic serviceHelper's URL and parses response based on its ResponseDataType
 	func loadAPIRequest(requestData: [String: Any], completionHandler: @escaping (T.ResponseDataType?, NetworkError?) -> ()) {
 
 		/// Get the URL request
@@ -28,6 +30,7 @@ struct WebServiceManager<T: RequestHandler & ResponseHandler> {
 			return
 		}
 
+		/// get datatTask
 		let task = urlSession.dataTask(with: urlRequest) { (data, response, error) in
 
 			guard let httpResponse = response as? HTTPURLResponse  else {
