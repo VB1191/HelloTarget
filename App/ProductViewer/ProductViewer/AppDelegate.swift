@@ -48,12 +48,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+	// handle userActivityType shortcut
 	func application(_ application: UIApplication, willContinueUserActivityWithType userActivityType: String) -> Bool {
 		if userActivityType == ListViewController.dealsListActivity {
 			// go to deals list
+			let navigationController = UINavigationController()
+			navigationController.setTargetNavigationBar()
+			let initialVC = listCoordinator.viewController
+			navigationController.viewControllers = [initialVC]
+			window?.rootViewController = navigationController
+			window?.makeKeyAndVisible()
 		}
 		return true
 	}
 
+	// handle deeplink
+	func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+
+		let urlHost = url.host
+		if urlHost == "dealsList" {
+			let navigationController = UINavigationController()
+			navigationController.setTargetNavigationBar()
+			let initialVC = listCoordinator.viewController
+			navigationController.viewControllers = [initialVC]
+			window?.rootViewController = navigationController
+		}
+
+		window?.makeKeyAndVisible()
+		return true
+	}
 }
 

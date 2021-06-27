@@ -27,6 +27,7 @@ final class ProductDetailView: UIView, ReusableView {
 		let imageView = UIImageView()
 		imageView.translatesAutoresizingMaskIntoConstraints = false
 		imageView.contentMode = .scaleAspectFit
+		imageView.accessibilityIdentifier = "productDetailImage"
 		return imageView
 	}()
 
@@ -36,7 +37,7 @@ final class ProductDetailView: UIView, ReusableView {
 		label.font = UIFont.systemFont(ofSize: 26.0, weight: .medium)
 		label.textColor = .targetBullseyeRedColor
 		label.textAlignment = .center
-		label.accessibilityIdentifier = "productSalePrice"
+		label.accessibilityIdentifier = "productDeatilSalePrice"
 		return label
 	}()
 
@@ -46,7 +47,7 @@ final class ProductDetailView: UIView, ReusableView {
 		label.font = UIFont.systemFont(ofSize: 22.0, weight: .medium)
 		label.textColor = .targetNeutralGrayColor
 		label.textAlignment = .center
-		label.accessibilityIdentifier = "originalSalePrice"
+		label.accessibilityIdentifier = "productDetailOriginalPrice"
 		return label
 	}()
 
@@ -57,6 +58,7 @@ final class ProductDetailView: UIView, ReusableView {
 		stack.axis = .vertical
 		stack.spacing = 6
 		stack.translatesAutoresizingMaskIntoConstraints = false
+		stack.accessibilityIdentifier = "productDetailPricesStack"
 		return stack
 	}()
 
@@ -66,6 +68,7 @@ final class ProductDetailView: UIView, ReusableView {
 		label.textColor = .black
 		label.textAlignment = .center
 		label.translatesAutoresizingMaskIntoConstraints = false
+		label.accessibilityIdentifier = "productDetailDescription"
 		return label
 	}()
 
@@ -77,6 +80,7 @@ final class ProductDetailView: UIView, ReusableView {
 		button.setTitleColor(.white, for: .normal)
 		button.translatesAutoresizingMaskIntoConstraints = false
 		button.layer.cornerRadius = 10
+		button.accessibilityIdentifier = "productDetailCartButton"
 		return button
 	}()
 
@@ -88,6 +92,7 @@ final class ProductDetailView: UIView, ReusableView {
 		button.setTitleColor(.targetNeutralGrayColor, for: .normal)
 		button.translatesAutoresizingMaskIntoConstraints = false
 		button.layer.cornerRadius = 10
+		button.accessibilityIdentifier = "productDetailListButton"
 		return button
 	}()
 
@@ -98,18 +103,21 @@ final class ProductDetailView: UIView, ReusableView {
 		stack.axis = .vertical
 		stack.spacing = 16
 		stack.translatesAutoresizingMaskIntoConstraints = false
+		stack.accessibilityIdentifier = "productDetailContainerStack"
 		return stack
 	}()
 
 	internal lazy var scrollView: UIScrollView = {
 		let scrollView = UIScrollView()
 		scrollView.translatesAutoresizingMaskIntoConstraints = false
+		scrollView.accessibilityIdentifier = "productDetailScroll"
 		return scrollView
 	}()
 
 	lazy var contentView: UIView = {
 		let view = UIView()
 		view.translatesAutoresizingMaskIntoConstraints = false
+		view.accessibilityIdentifier = "productDetailContentView"
 		return view
 	}()
 
